@@ -1,0 +1,55 @@
+function prime_position(position) {
+    var number = 1;
+    var x = 0;
+    var i;
+    while(x < position){
+        number++;
+
+        for (i = 2; i < number; i++) {
+            if (number % i == 0) {
+                break;
+            }
+        }
+        if(i == number){
+            x++;
+        }
+    }
+    return number;
+}
+
+
+
+
+function sort_subtract(num){
+
+    //Convert number to string
+    var number = String(num);
+
+    //Find length of number
+    var length = number.length;
+
+    var arrX = number.split("");
+    var arrY = number.split("");
+
+    //Sort array in ascending order
+    arrX = arrX.sort((a,b)=>a-b);
+    //Sort array in descending order
+    arrY = arrY.sort((a,b)=>b-a);
+
+    var xString = "";
+    var yString = "";
+
+    for(var i = 0; i < arrX.length; i++){
+        xString = xString + arrX[i];
+    }
+
+    for(var i = 0; i < arrX.length; i++){
+        yString = yString + arrY[i];
+    }
+
+    var x = parseInt(xString);
+    var y = parseInt(yString);
+
+    return (x - y) * -1;
+
+}
